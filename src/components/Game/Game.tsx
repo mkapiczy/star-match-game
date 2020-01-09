@@ -1,46 +1,11 @@
 import React from 'react';
 import './Game.css';
 
-
-const StarsDisplay: React.FC = () => {
-    return (
-        <div className="StarsDisplay">
-            Stars
-        </div>
-    )
-}
-
-const SelectedNumbersDisplay: React.FC = () => {
-    return (
-        <div className="SelectedNumbersDisplay">
-            Selected Numbers
-        </div>
-    )
-}
-
-const NumbersDisplay: React.FC = () => {
-    return (
-        <div className="NumbersDisplay">
-            Numbers Display
-        </div>
-    )
-}
-
-const ApproveButton: React.FC = () => {
-    return (
-        <button className="ApproveButton">
-            Approve
-        </button>
-    )
-}
-
-const RepeatDrawButton: React.FC = () => {
-    return (
-        <button className="RepeatDrawButton">
-            Repeat
-        </button>
-    )
-}
+import StarsDisplay from '../StarsDisplay/StarsDisplay';
+import SelectedNumbersDisplay from '../SelectedNumbersDisplay/SelectedNumbersDisplay';
+import NumbersDisplay from '../NumbersDisplay/NumbersDisplay'
+import ApproveButton from '../ApproveButton/ApproveButton';
+import RepeatDrawButton from '../RepeatDrawButton/RepeatDrawButton';
 
 const Game: React.FC = () => {
     return (
