@@ -1,0 +1,31 @@
+.Game {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-row {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+}
+
+.StarsDisplay {
+    flex: 1 0 auto;
+    background-color: blue;
+}
+
+.SelectedNumbersDisplay {
+    flex: 1 0 auto;
+    background-color: black;
+}
+
+.second-row {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.NumbersDisplay {
+  flex: 1 0 auto;
+  background-color: gray;
+}
