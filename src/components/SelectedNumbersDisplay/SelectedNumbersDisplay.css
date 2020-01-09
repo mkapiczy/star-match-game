@@ -1,4 +1,8 @@
 .SelectedNumbersDisplay {
-    flex: 1 0 auto;
-    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: white;
+    height: 100%;
+    margin: 10px;
 }

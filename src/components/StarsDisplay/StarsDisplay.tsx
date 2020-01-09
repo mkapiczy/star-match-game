@@ -1,11 +1,19 @@
 import React from 'react';
 import './StarsDisplay.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faStar} from '@fortawesome/free-solid-svg-icons'
 
-
-const StarsDisplay: React.FC = () => {
+interface Props {
+    roundNumber: number;
+    numberOfStars: number;
+}
+const StarsDisplay: React.FC<Props> = (props:Props) => {
     return (
         <div className="StarsDisplay">
-            Stars
+            <h3 className="title">Round {props.roundNumber}:</h3>
+            <div className="stars">
+                {[...Array(props.numberOfStars)].map((e, i) => <FontAwesomeIcon className="star" key={i} icon={faStar}/>)}
+            </div>
         </div>
     )
 }

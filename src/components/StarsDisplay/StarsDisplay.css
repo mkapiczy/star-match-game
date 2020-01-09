@@ -1,4 +1,17 @@
 .StarsDisplay {
+    display: flex;
+    flex-direction: row;
     flex: 1 0 auto;
-    background-color: blue;
+    height: 80%;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 25px;
+    border-style: groove;
+    margin: 20px;
+}
+
+.title {
+    margin-left: 20px;
+    margin-right: 20px;
 }
