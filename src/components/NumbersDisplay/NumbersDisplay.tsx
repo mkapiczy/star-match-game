@@ -1,5 +1,6 @@
 import React from 'react';
 import './NumbersDisplay.css';
+import Number from '../Number/Number';
 
 interface Props {
     availableNumbers: Array<number>,
@@ -9,8 +10,7 @@ interface Props {
 const NumbersDisplay: React.FC<Props> = (props: Props) => {
     return (
         <div className="NumbersDisplay">
-            {[...Array(9)].map((e, i) => <button
-                className={'circular-button' + (props.availableNumbers.includes(i + 1) ? '' : ' not-available')} onClick={() => props.onNumberClick(i+1)}>{i + 1}</button>)}
+            {[...Array(9)].map((e, i) => <Number key={i} numberValue={i+1} onNumberClick={props.onNumberClick} isAvailable={props.availableNumbers.includes(i+1)}/>)}
         </div>
     )
 }
