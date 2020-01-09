@@ -1,7 +1,7 @@
 .SelectedNumbersDisplay {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
+    flex: 3 0 auto;
     background-color: white;
     height: 100%;
     margin: 10px;

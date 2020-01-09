@@ -1,0 +1,18 @@
+.button-area {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
+.button {
+    display: inline-block;
+    margin: auto;
+    background-color: #282C34;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    width: 40%;
+    height: 30%;
+}
