@@ -3,6 +3,7 @@
     flex-direction: row;
     flex: 3 0 auto;
     height: 80%;
+    width: 33.333%;
     background-color: white;
     justify-content: flex-start;
     align-items: center;

@@ -1,11 +1,16 @@
 import React from 'react';
 import './SelectedNumbersDisplay.css';
+import Number from '../Number/Number'
 
+interface Props {
+    selectedNumbers: Array<number>
+    onNumberClick: (selectedNumber: number) => void;
+}
 
-const SelectedNumbersDisplay: React.FC = () => {
+const SelectedNumbersDisplay: React.FC<Props> = (props: Props) => {
     return (
         <div className="SelectedNumbersDisplay">
-            Selected Numbers
+            {props.selectedNumbers.map(number => <Number key={number} numberValue={number} onNumberClick={props.onNumberClick} isAvailable={true}/>)}
         </div>
     )
 }
