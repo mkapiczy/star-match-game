@@ -6,13 +6,18 @@ import SelectedNumbersDisplay from '../SelectedNumbersDisplay/SelectedNumbersDis
 import NumbersDisplay from '../NumbersDisplay/NumbersDisplay'
 import CircularButton from '../CircularButton/CircularButton';
 import {faCheck, faReply} from '@fortawesome/free-solid-svg-icons'
+import _ from 'lodash'
 
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const Game: React.FC = () => {
     const [roundNumber, setRoundNumber] = useState(1);
     const [numberOfStars, setNumberOfStars] = useState(random(1, 9))
+    const [availableNumbers, setAvailableNumbers] = useState([1,2,3,4,5,6,7,8,9])
 
+    const selectNumber = (selectedNumber: number) => {
+        setAvailableNumbers(_.reject(availableNumbers, (number) => number===selectedNumber));
+    }
     return (
         <div className="Game">
             <div className="first-row">
@@ -22,7 +27,7 @@ const Game: React.FC = () => {
                 <SelectedNumbersDisplay/>
             </div>
             <div className="second-row">
-                <NumbersDisplay/>
+                <NumbersDisplay availableNumbers={availableNumbers} onNumberClick={selectNumber}/>
             </div>
         </div>
     );

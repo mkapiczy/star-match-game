@@ -1,4 +1,33 @@
 .NumbersDisplay {
+    display: flex;
+    flex-direction: row;
     flex: 1 0 auto;
-    background-color: gray;
+    height: 80%;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 25px;
+    border-style: groove;
+    margin: 20px;
+    padding: 10px;
+}
+
+.circular-button {
+    margin-right: 10px;
+    background-color: #aeaeae;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    width: 5%;
+    height: 100%;
+}
+
+.circular-button.not-available {
+    background-color: #3F51B5;
+}
+
+.circular-button:not(.not-available):hover {
+    background-color: #d7d7d7;
 }
