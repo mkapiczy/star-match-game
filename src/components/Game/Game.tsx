@@ -28,7 +28,7 @@ const randomSumIn = (arr: Array<number>, max: number): number => {
             }
         }
     }
-    return random(1, max);
+    return sums[random(0, sums.length - 1)];
 }
 
 enum GameState {
@@ -71,10 +71,8 @@ const Game: React.FC = () => {
     const computeGameState = () => {
         if (!availableNumbers.length && !selectedNumbers.length) {
             setGameState(GameState.WON)
-            window.alert("You won!");
-        } else if (!areRetriesEnabled() && !areSelectedNumbersCorrect()) {
+        } else if (numberOfRetries === maxNumberOfRetries && availableNumbers.reduce((a, b) => a + b, 0) !== numberOfStars) {
             setGameState(GameState.LOST)
-            window.alert("You lost!")
         }
     }
 
