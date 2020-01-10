@@ -1,17 +1,26 @@
 .Game {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .first-row {
     display: flex;
     flex-direction: row;
-    height: 150px;
+    height: 15vh;
 }
 
 .second-row {
   display: flex;
   flex-direction: row;
-  height: 100px;
+  height: 12vh;
+}
+
+.third-row {
+   display: flex;
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    height: 15vh;
 }
 

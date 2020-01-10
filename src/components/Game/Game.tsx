@@ -10,6 +10,8 @@ import _ from 'lodash'
 import NumbersDisplay from '../NumbersDisplay/NumbersDisplay';
 import CornerCircularLabel from '../CornerCircularLabel/CornerCurcularLabel';
 import {Corner} from "../../CommonTypes";
+import Trophy from "../Trophy/Trophy";
+import Bomb from "../Bomb/Bomb";
 
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -93,6 +95,15 @@ const Game: React.FC = () => {
         setSelectedNumbers(newSelected);
         setAvailableNumbers([...availableNumbers, selectedNumber]);
     }
+
+    const restartGame = () => {
+        setRoundNumber(1)
+        setAvailableNumbers(Array.from(Array(9), (_, i) => i + 1))
+        setNumberOfStars(randomSumIn(availableNumbers, maxNumberOfStars))
+        setSelectedNumbers([])
+        setNumberOfRetries(0)
+        setGameState(GameState.IN_PROGRESS)
+    }
     return (
         <div className="Game">
             <div className="first-row">
@@ -113,6 +124,13 @@ const Game: React.FC = () => {
             </div>
             <div className="second-row">
                 <NumbersDisplay availableNumbers={availableNumbers} onNumberClick={selectNumber}/>
+            </div>
+            <div className="third-row">
+                <div>
+                    {gameState !== GameState.IN_PROGRESS ?
+                        gameState === GameState.WON ?
+                            <Trophy onClick={restartGame}/> : <Bomb onClick={restartGame}/> : ''}
+                </div>
             </div>
         </div>
     );

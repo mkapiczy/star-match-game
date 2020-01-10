@@ -1,0 +1,36 @@
+.bomb-wrapper {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.bomb-image {
+    position: absolute;
+    width: 50vmin;
+    height: auto;
+    z-index: 1;
+}
+
+.title-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    justify-content: center;
+    align-content: center;
+}
+
+.game-over-title {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.bomb-play-again-button {
+    width: 100%;
+}
