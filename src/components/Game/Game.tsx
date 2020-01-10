@@ -3,10 +3,13 @@ import './Game.css';
 
 import StarsDisplay from '../StarsDisplay/StarsDisplay';
 import SelectedNumbersDisplay from '../SelectedNumbersDisplay/SelectedNumbersDisplay';
-import NumbersDisplay from '../NumbersDisplay/NumbersDisplay'
+import ButtonArea from '../ButtonArea/ButtonArea';
 import CircularButton from '../CircularButton/CircularButton';
 import {faCheck, faReply} from '@fortawesome/free-solid-svg-icons'
 import _ from 'lodash'
+import NumbersDisplay from '../NumbersDisplay/NumbersDisplay';
+import CornerCircularLabel from '../CornerCircularLabel/CornerCurcularLabel';
+import {Corner} from "../../CommonTypes";
 
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -94,10 +97,19 @@ const Game: React.FC = () => {
         <div className="Game">
             <div className="first-row">
                 <StarsDisplay roundNumber={roundNumber} numberOfStars={numberOfStars}/>
-                <CircularButton icon={faCheck} isBlocked={!areSelectedNumbersCorrect()}
-                                onClick={approveSelectedNumbers}/>
-                <CircularButton icon={faReply} isBlocked={!areRetriesEnabled()} onClick={retryDraw}/>
-                <SelectedNumbersDisplay selectedNumbers={selectedNumbers} onNumberClick={unselectNumber}/>
+                <ButtonArea>
+                    <CircularButton icon={faCheck} isBlocked={!areSelectedNumbersCorrect()}
+                                    onClick={approveSelectedNumbers}/>
+                </ButtonArea>
+                <ButtonArea>
+                    <CircularButton icon={faReply} isBlocked={!areRetriesEnabled()} onClick={retryDraw}>
+                        <CornerCircularLabel value={maxNumberOfRetries - numberOfRetries} corner={Corner.TOP_RIGHT}/>
+                    </CircularButton>
+                </ButtonArea>
+                < SelectedNumbersDisplay
+                    selectedNumbers={selectedNumbers}
+                    onNumberClick={unselectNumber}
+                />
             </div>
             <div className="second-row">
                 <NumbersDisplay availableNumbers={availableNumbers} onNumberClick={selectNumber}/>

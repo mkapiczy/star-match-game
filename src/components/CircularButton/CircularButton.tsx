@@ -6,16 +6,16 @@ import {IconDefinition} from '@fortawesome/free-solid-svg-icons'
 interface Props {
     icon: IconDefinition,
     isBlocked: boolean,
-    onClick: () => void
+    onClick: () => void,
+    children?: any
 }
 
 const CircularButton: React.FC<Props> = (props: Props) => {
     return (
-        <div className="button-area">
-            <button className={"button" + (props.isBlocked ? ' disabled' : '')} onClick={props.onClick}>
-                <FontAwesomeIcon icon={props.icon}/>
-            </button>
-        </div>
+        <button className={"button" + (props.isBlocked ? ' disabled' : '')} onClick={props.onClick}>
+            <FontAwesomeIcon icon={props.icon}/>
+            {props.children}
+        </button>
     )
 }
 
