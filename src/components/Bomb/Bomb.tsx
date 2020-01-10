@@ -10,7 +10,7 @@ const Bomb: React.FC<Props> = (props: Props) => {
 
     return (
         <div className='bomb-wrapper'>
-            <img className={"bomb-image"} src={bomb} alt="loading...">
+            <img className={"bomb-image"} src={bomb}>
             </img>
             <div className="title-wrapper">
                 <div className="game-over-title">Game Over!</div>

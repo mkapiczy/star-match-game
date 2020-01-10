@@ -13,23 +13,7 @@ import {Corner} from "../../CommonTypes";
 import Trophy from "../Trophy/Trophy";
 import Bomb from "../Bomb/Bomb";
 
-const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
-
-const randomSumIn = (arr: Array<number>, max: number): number => {
-    const sets: Array<Array<number>> = [[]];
-    const sums: Array<number> = [];
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0, len = sets.length; j < len; j++) {
-            const candidateSet = sets[j].concat(arr[i]);
-            const candidateSum = candidateSet.reduce((a: number, b: number) => a + b, 0)
-            if (candidateSum <= max) {
-                sets.push(candidateSet);
-                sums.push(candidateSum);
-            }
-        }
-    }
-    return sums[random(0, sums.length - 1)];
-}
+import {random, randomSum} from "../../services/math-utils";
 
 enum GameState {
     WON,
@@ -42,7 +26,7 @@ const Game: React.FC = () => {
     const maxNumberOfRetries = 5;
     const [roundNumber, setRoundNumber] = useState(1);
     const [availableNumbers, setAvailableNumbers] = useState(Array.from(Array(9), (_, i) => i + 1))
-    const [numberOfStars, setNumberOfStars] = useState<number>(randomSumIn(availableNumbers, maxNumberOfStars))
+    const [numberOfStars, setNumberOfStars] = useState<number>(randomSum(availableNumbers, maxNumberOfStars))
     const [selectedNumbers, setSelectedNumbers] = useState<Array<number>>([])
     const [numberOfRetries, setNumberOfRetries] = useState<number>(0);
     const [gameState, setGameState] = useState<GameState>(GameState.IN_PROGRESS)
@@ -56,14 +40,14 @@ const Game: React.FC = () => {
     const approveSelectedNumbers = () => {
         if (areSelectedNumbersCorrect()) {
             setSelectedNumbers([])
-            setNumberOfStars(randomSumIn(availableNumbers, maxNumberOfStars))
+            setNumberOfStars(randomSum(availableNumbers, maxNumberOfStars))
             setRoundNumber(roundNumber + 1)
         }
     }
 
     const retryDraw = () => {
         if (areRetriesEnabled()) {
-            setNumberOfStars(randomSumIn(availableNumbers, maxNumberOfStars))
+            setNumberOfStars(randomSum(availableNumbers, maxNumberOfStars))
             setNumberOfRetries(numberOfRetries + 1)
         }
     }
@@ -97,11 +81,12 @@ const Game: React.FC = () => {
     const restartGame = () => {
         setRoundNumber(1)
         setAvailableNumbers(Array.from(Array(9), (_, i) => i + 1))
-        setNumberOfStars(randomSumIn(availableNumbers, maxNumberOfStars))
+        setNumberOfStars(randomSum(availableNumbers, maxNumberOfStars))
         setSelectedNumbers([])
         setNumberOfRetries(0)
         setGameState(GameState.IN_PROGRESS)
     }
+
     return (
         <div className="Game">
             <div className="first-row">
