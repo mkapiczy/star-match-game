@@ -19,7 +19,8 @@ import {randomSum} from "../../services/math-utils";
 enum GameState {
     WON,
     LOST,
-    IN_PROGRESS
+    IN_PROGRESS,
+    STOPPED
 }
 
 const Game: React.FC = () => {
@@ -32,7 +33,7 @@ const Game: React.FC = () => {
     const [numberOfStars, setNumberOfStars] = useState<number>(randomSum(availableNumbers, MAX_NUMBER_OF_STARS))
     const [selectedNumbers, setSelectedNumbers] = useState<Array<number>>([])
     const [numberOfRetries, setNumberOfRetries] = useState<number>(0);
-    const [gameState, setGameState] = useState<GameState>(GameState.IN_PROGRESS)
+    const [gameState, setGameState] = useState<GameState>(GameState.STOPPED)
     const [timer, setTimer] = useState<number>(GAME_TIME)
     useEffect(() => {
         if (gameState === GameState.IN_PROGRESS) {
@@ -109,15 +110,23 @@ const Game: React.FC = () => {
         <div className="Game">
             <div className="first-row">
                 <StarsDisplay roundNumber={roundNumber} numberOfStars={numberOfStars}/>
-                <ButtonArea>
-                    <CircularButton icon={faCheck} isBlocked={!areSelectedNumbersCorrect()}
-                                    onClick={approveSelectedNumbers}/>
-                </ButtonArea>
-                <ButtonArea>
-                    <CircularButton icon={faReply} isBlocked={!areRetriesEnabled()} onClick={retryDraw}>
-                        <CornerCircularLabel value={MAX_NUMBER_OF_RETRIES - numberOfRetries} corner={Corner.TOP_RIGHT}/>
-                    </CircularButton>
-                </ButtonArea>
+                {gameState === GameState.STOPPED ?
+                    <div style={{display: "flex", flexDirection: "column", alignContent:"center", justifyContent:"center"}}>
+                        <button style={{width: "auto", height: "50%"}} onClick={restartGame}>Start Game</button>
+                    </div> :
+                    <>
+                        <ButtonArea>
+                            <CircularButton icon={faCheck} isBlocked={!areSelectedNumbersCorrect()}
+                                            onClick={approveSelectedNumbers}/>
+                        </ButtonArea>
+                        <ButtonArea>
+                            <CircularButton icon={faReply} isBlocked={!areRetriesEnabled()} onClick={retryDraw}>
+                                <CornerCircularLabel value={MAX_NUMBER_OF_RETRIES - numberOfRetries}
+                                                     corner={Corner.TOP_RIGHT}/>
+                            </CircularButton>
+                        </ButtonArea>
+                    </>
+                }
                 < SelectedNumbersDisplay
                     selectedNumbers={selectedNumbers}
                     onNumberClick={unselectNumber}
@@ -128,9 +137,10 @@ const Game: React.FC = () => {
             </div>
             <div className="third-row">
                 <div>
-                    {gameState === GameState.IN_PROGRESS ?
+                    {gameState !== GameState.STOPPED ? gameState === GameState.IN_PROGRESS ?
                         <Timer timer={timer}/> :
-                        gameState === GameState.WON ? <Trophy onClick={restartGame}/> : <Bomb onClick={restartGame}/>}
+                        gameState === GameState.WON ? <Trophy onClick={restartGame}/> :
+                            <Bomb onClick={restartGame}/> : ''}
                 </div>
             </div>
         </div>
