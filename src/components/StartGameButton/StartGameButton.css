@@ -7,7 +7,7 @@
 
 .start-game-button {
     border-radius: 50%;
-    width: 20vmin;
-    height: 20vmin;
-    font-size: 4vmin;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding: 1em;
 }
