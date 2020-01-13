@@ -1,7 +1,6 @@
 .button {
     position: relative;
     display: inline-block;
-    margin: auto;
     background-color: #3F51B5;
     border: none;
     color: white;
@@ -10,6 +9,8 @@
     border-radius: 50%;
     width: 6vmin;
     height: 6vmin;
+    font-size: 2vmin;
+    margin: auto 0.25em auto 0.25em;
 }
 
 .innerButton {
