@@ -9,7 +9,7 @@ const Header: React.FC = () => {
             <a href="/">
                 <img src={logo} className="App-logo" alt="logo"/>
             </a>
-            <p>
+            <p className="app-title">
                 Match Stars Game
             </p>
         </header>

@@ -1,0 +1,13 @@
+.start-game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.start-game-button {
+    border-radius: 50%;
+    width: 20vmin;
+    height: 20vmin;
+    font-size: 4vmin;
+}

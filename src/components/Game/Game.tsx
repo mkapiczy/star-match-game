@@ -13,6 +13,7 @@ import {Corner} from "../../CommonTypes";
 import Trophy from "../Trophy/Trophy";
 import Bomb from "../Bomb/Bomb";
 import Timer from "../Timer/Timer"
+import StartGameButton from "../StartGameButton/StartGameButton";
 import {randomSum} from "../../services/math-utils";
 
 
@@ -111,9 +112,7 @@ const Game: React.FC = () => {
             <div className="first-row">
                 <StarsDisplay roundNumber={roundNumber} numberOfStars={numberOfStars}/>
                 {gameState === GameState.STOPPED ?
-                    <div style={{display: "flex", flexDirection: "column", alignContent:"center", justifyContent:"center"}}>
-                        <button style={{width: "auto", height: "50%"}} onClick={restartGame}>Start Game</button>
-                    </div> :
+                    <StartGameButton onClick={restartGame}/> :
                     <>
                         <ButtonArea>
                             <CircularButton icon={faCheck} isBlocked={!areSelectedNumbersCorrect()}

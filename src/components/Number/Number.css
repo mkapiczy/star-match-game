@@ -1,5 +1,6 @@
 .number {
-    margin-right: 5px;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
     background-color: #aeaeae;
     border: none;
     color: white;
@@ -8,6 +9,7 @@
     border-radius: 50%;
     width: 5vmin;
     height: 5vmin;
+    font-size: 4vmin;
 }
 
 .number.not-available {

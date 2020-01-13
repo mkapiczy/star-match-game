@@ -15,7 +15,9 @@
  }
 
 .trophy-play-again-button {
-    width: 100%;
+    width: 10vmin;
+    margin: auto;
+    font-size: 2vmin;
 }
 
 .wrapper {

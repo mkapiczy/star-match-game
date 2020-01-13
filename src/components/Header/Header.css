@@ -3,10 +3,14 @@
     flex-direction: row;
     background-color: #3F51B5;
     flex: 0 0 auto;
-
+    width: 100%;
     align-items: center;
     justify-content: flex-start;
     color: white;
+}
+
+.app-title {
+    font-size: 4vmin;
 }
 
 .App-logo {

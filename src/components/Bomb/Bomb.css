@@ -28,9 +28,13 @@
 .game-over-title {
     color: white;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 4vmin;
 }
 
 .bomb-play-again-button {
-    width: 100%;
+    width: 10vmin;
+    margin: auto;
+    font-size: 2vmin;
 }
+
+
