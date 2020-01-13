@@ -74,7 +74,7 @@ const Game: React.FC = () => {
     const computeGameState = () => {
         if (!availableNumbers.length && !selectedNumbers.length) {
             setGameState(GameState.WON)
-        } else if (numberOfRetries === MAX_NUMBER_OF_RETRIES && availableNumbers.reduce((a, b) => a + b, 0) !== numberOfStars) {
+        } else if (numberOfRetries === MAX_NUMBER_OF_RETRIES && !availableNumbers.length && selectedNumbers.reduce((a, b) => a + b, 0) !== numberOfStars) {
             setGameState(GameState.LOST)
         }
     }
