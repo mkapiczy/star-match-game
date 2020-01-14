@@ -21,3 +21,25 @@ exports[`Header component tests should match snapshot 1`] = `
   </p>
 </header>
 `;
+
+exports[`Header snapshot tests should match snapshot 1`] = `
+<header
+  className="App-header"
+>
+  <a
+    href="/"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+      title="logo"
+    />
+  </a>
+  <p
+    className="app-title"
+  >
+    Match Stars Game
+  </p>
+</header>
+`;
