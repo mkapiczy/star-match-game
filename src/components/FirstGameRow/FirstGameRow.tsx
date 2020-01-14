@@ -6,7 +6,6 @@ import SelectedNumbersDisplay from '../SelectedNumbersDisplay/SelectedNumbersDis
 import CircularButton from '../CircularButton/CircularButton';
 import {faCheck, faReply} from '@fortawesome/free-solid-svg-icons'
 import CornerCircularLabel from '../CornerCircularLabel/CornerCircularLabel';
-import StartGameButton from "../StartGameButton/StartGameButton";
 import {Corner, GameState} from "../../services/CommonTypes"
 
 interface Props {
@@ -24,11 +23,17 @@ interface Props {
 }
 
 const FirstGameRow: React.FC<Props> = (props: Props) => {
+    const isGameInitialized = () => {
+        return props.gameState !== GameState.NOT_INITIALIZED
+    }
     return (
         <>
-            <StarsDisplay roundNumber={props.roundNumber} numberOfStars={props.numberOfStars}/>
-            {props.gameState === GameState.NOT_INITIALIZED ?
-                <StartGameButton onClick={props.restartGame}/> :
+            <StarsDisplay roundNumber={props.roundNumber} numberOfStars={isGameInitialized() ? props.numberOfStars : 0}/>
+            {!isGameInitialized() ?
+                <div className="start-game-column">
+                    <button className="start-game-button" onClick={props.restartGame}>Start Game</button>
+                </div>
+                :
                 <>
                     <div className="button-column">
                         <CircularButton icon={faCheck} isBlocked={!props.areSelectedNumbersCorrect}
