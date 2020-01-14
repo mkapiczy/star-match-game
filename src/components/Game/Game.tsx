@@ -132,7 +132,7 @@ const Game: React.FC = () => {
                 />
             </div>
             <div className="second-row">
-                <NumbersDisplay availableNumbers={availableNumbers} onNumberClick={selectNumber}/>
+                <NumbersDisplay availableNumbers={availableNumbers} onNumberClick={selectNumber} numbersCount={MAX_NUMBER_OF_STARS}/>
             </div>
             <div className="third-row">
                 <div>
