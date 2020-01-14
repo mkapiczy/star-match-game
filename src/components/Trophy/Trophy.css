@@ -9,10 +9,10 @@
 }
 
 .you-won-title {
-     color: white;
-     font-weight: bold;
-     font-size: 2em;
- }
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+}
 
 .trophy-play-again-button {
     width: 10vmin;
@@ -26,15 +26,17 @@
     justify-content: center;
     align-items: center;
 }
+
 .glow {
     position: absolute;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     background: transparent;
-    border-radius: 200px;
-    box-shadow: 0px 0px 400px 200px #fffbc0;
+    border-radius: 20vmin;
+    box-shadow: 0 0 40vmin 20vmin #fffbc0;
     animation: shadow 6s linear infinite;
 }
+
 .mask {
     display: flex;
     justify-content: center;
@@ -49,7 +51,7 @@
 
 .container {
     position: absolute;
-    top: 15vmin;
+    top: 15vmax;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,73 +60,74 @@
 }
 
 .main {
-    height: 250px;
-    width: 200px;
+    height: 25vmin;
+    width: 20vmin;
     background: gold;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 10vmin;
+    border-bottom-right-radius: 10vmin;
 }
 
 .stem2 {
     position: fixed;
-    top: 190px;
-    border-bottom: 100px solid gold;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
+    top: 19vmin;
+    border-bottom: 10vmin solid gold;
+    border-left: 5vmin solid transparent;
+    border-right: 5vmin solid transparent;
     height: 0px;
-    width: 40px;
-    border-bottom-left-radius: 200px;
-    border-bottom-right-radius: 200px;
+    width: 4vmin;
+    border-bottom-left-radius: 20vmin;
+    border-bottom-right-radius: 20vmin;
     transform: rotate(180deg);
 }
+
 .stem1 {
     position: absolute;
-    top: 280px;
-    border-bottom: 100px solid gold;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
+    top: 28vmin;
+    border-bottom: 10vmin solid gold;
+    border-left: 5vmin solid transparent;
+    border-right: 5vmin solid transparent;
     height: 0;
-    width: 40px;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 200px;
+    width: 4vmin;
+    border-top-left-radius: 20vmin;
+    border-top-right-radius: 20vmin;
 }
+
 .base {
     position: fixed;
-    width: 180px;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 200px;
+    width: 18vmin;
+    border-top-left-radius: 2vmin;
+    border-top-right-radius: 2vmin;
     background: black;
-    height: 20px;
-    top: 380px;
+    height: 2vmin;
+    top: 38vmin;
 }
+
 .arms {
-    width: 300px;
-    height: 150px;
+    width: 35vmin;
+    height: 20vmin;
     position: absolute;
     background: transparent;
     z-index: -1;
-    border: #ddba00 20px solid;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
-
+    border: #ddba00 2vmin solid;
+    border-radius: 0.5vmin 0.5vmin 10vmin 10vmin;
 }
+
 .stemCrease {
     position: absolute;
-    width: 60px;
-    height: 15px;
-    border-radius: 10px;
+    width: 6vmin;
+    height: 1.5vmin;
+    border-radius: 1vmin;
     background: #ddba00;
-    top: 280px;
+    top: 28vmin;
     z-index: 1;
 }
+
 .trophy-star {
     position: absolute;
-    font-size: 100px;
+    font-size: 10vmin;
     color: white;
     top: 0px;
-    left: 100px;
+    left: 10vmin;
     transform-origin: center;
     animation: shimmer .4s alternate infinite linear;
 }
@@ -139,21 +142,44 @@
 }
 
 @keyframes shimmer {
-    to{transform: rotate(20deg)}
+    to {
+        transform: rotate(20deg)
+    }
 }
+
 @keyframes rotate {
-    to{transform: rotate(10deg)}
+    to {
+        transform: rotate(10deg)
+    }
 }
-@keyframes leftToRight{
-    0% {clip-path: circle(150px at 0% 100%);}
-    20% {clip-path: circle(150px at 50% 15%);}
-    30% {clip-path: circle(150px at 100% 50%);}
-    40% {clip-path: circle(150px at 70% 100%);}
-    70% {clip-path: circle(150px at -100% -100%);}
-    80% {clip-path: circle(150px at -100% 200%);}
-    85% {clip-path: circle(150px at 50% 200%);}
-    90% {clip-path: circle(100% at 50% 80%);}
+
+@keyframes leftToRight {
+    0% {
+        clip-path: circle(150px at 0% 100%);
+    }
+    20% {
+        clip-path: circle(150px at 50% 15%);
+    }
+    30% {
+        clip-path: circle(150px at 100% 50%);
+    }
+    40% {
+        clip-path: circle(150px at 70% 100%);
+    }
+    70% {
+        clip-path: circle(150px at -100% -100%);
+    }
+    80% {
+        clip-path: circle(150px at -100% 200%);
+    }
+    85% {
+        clip-path: circle(150px at 50% 200%);
+    }
+    90% {
+        clip-path: circle(100% at 50% 80%);
+    }
 }
+
 @keyframes shadow {
     0% {
         left: 0%;
