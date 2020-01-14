@@ -10,7 +10,7 @@ interface Props {
 const Number: React.FC<Props> = (props: Props) => {
     return (
         <button key={props.numberValue} className={'number' + (props.isAvailable ? '' : ' not-available')}
-                onClick={() => props.onNumberClick(props.numberValue)}>
+                disabled={!props.isAvailable} onClick={() => props.onNumberClick(props.numberValue)}>
             {props.numberValue}
         </button>
     )

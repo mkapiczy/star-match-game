@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Number component tests should match snapshot for button available false 1`] = `
+<button
+  className="number not-available"
+  disabled={true}
+  onClick={[Function]}
+>
+  2
+</button>
+`;
+
+exports[`Number component tests should match snapshot for button available true 1`] = `
+<button
+  className="number"
+  disabled={false}
+  onClick={[Function]}
+>
+  2
+</button>
+`;
