@@ -42,8 +42,12 @@
   },
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
+    "@types/enzyme": "^3.10.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/react-test-renderer": "^16.9.1",
     "@will-stone/prettier-config": "^2.0.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-simple-import-sort": "^5.0.0",
