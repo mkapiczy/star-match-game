@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './Bomb.css';
-import bomb from '../../bomb.gif'
+import bomb from '../../assets/bomb.gif'
 
 interface Props {
     onClick: any

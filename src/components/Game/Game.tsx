@@ -8,8 +8,8 @@ import CircularButton from '../CircularButton/CircularButton';
 import {faCheck, faReply} from '@fortawesome/free-solid-svg-icons'
 import _ from 'lodash'
 import NumbersDisplay from '../NumbersDisplay/NumbersDisplay';
-import CornerCircularLabel from '../CornerCircularLabel/CornerCurcularLabel';
-import {Corner} from "../../CommonTypes";
+import CornerCircularLabel from '../CornerCircularLabel/CornerCircularLabel';
+import {Corner} from "../../services/CommonTypes";
 import Trophy from "../Trophy/Trophy";
 import Bomb from "../Bomb/Bomb";
 import Timer from "../Timer/Timer"

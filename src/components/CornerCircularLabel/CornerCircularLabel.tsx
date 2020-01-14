@@ -1,6 +1,6 @@
 import React from 'react';
 import './CornerCircularLabel.css';
-import {Corner} from '../../CommonTypes'
+import {Corner} from '../../services/CommonTypes'
 
 interface Props {
     value: string | number,
