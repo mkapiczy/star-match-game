@@ -1,28 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import './Game.css';
-
-import StarsDisplay from '../StarsDisplay/StarsDisplay';
-import SelectedNumbersDisplay from '../SelectedNumbersDisplay/SelectedNumbersDisplay';
-import ButtonArea from '../ButtonArea/ButtonArea';
-import CircularButton from '../CircularButton/CircularButton';
-import {faCheck, faReply} from '@fortawesome/free-solid-svg-icons'
 import _ from 'lodash'
-import NumbersDisplay from '../NumbersDisplay/NumbersDisplay';
-import CornerCircularLabel from '../CornerCircularLabel/CornerCircularLabel';
-import {Corner} from "../../services/CommonTypes";
-import Trophy from "../Trophy/Trophy";
-import Bomb from "../Bomb/Bomb";
-import Timer from "../Timer/Timer"
-import StartGameButton from "../StartGameButton/StartGameButton";
 import {randomSum} from "../../services/math-utils";
-
-
-enum GameState {
-    WON,
-    LOST,
-    IN_PROGRESS,
-    STOPPED
-}
+import FirstGameRow from "../FirstGameRow/FirstGameRow";
+import SecondGameRow from "../SecondGameRow/SecondGameRow";
+import ThirdGameRow from "../ThirdGameRow/ThirdGameRow";
+import {GameState} from "../../services/CommonTypes";
 
 const Game: React.FC = () => {
     const MAX_NUMBER_OF_STARS = 9;
@@ -33,9 +16,10 @@ const Game: React.FC = () => {
     const [availableNumbers, setAvailableNumbers] = useState(Array.from(Array(9), (_, i) => i + 1))
     const [numberOfStars, setNumberOfStars] = useState<number>(randomSum(availableNumbers, MAX_NUMBER_OF_STARS))
     const [selectedNumbers, setSelectedNumbers] = useState<Array<number>>([])
-    const [numberOfRetries, setNumberOfRetries] = useState<number>(0);
-    const [gameState, setGameState] = useState<GameState>(GameState.STOPPED)
+    const [numberOfUsedRetries, setNumberOfRetries] = useState<number>(0);
+    const [gameState, setGameState] = useState<GameState>(GameState.NOT_INITIALIZED)
     const [timer, setTimer] = useState<number>(GAME_TIME)
+
     useEffect(() => {
         if (gameState === GameState.IN_PROGRESS) {
             computeGameState()
@@ -67,19 +51,19 @@ const Game: React.FC = () => {
     const retryDraw = () => {
         if (areRetriesEnabled()) {
             setNumberOfStars(randomSum(availableNumbers, MAX_NUMBER_OF_STARS))
-            setNumberOfRetries(numberOfRetries + 1)
+            setNumberOfRetries(numberOfUsedRetries + 1)
         }
     }
 
     const computeGameState = () => {
         if (!availableNumbers.length && !selectedNumbers.length) {
             setGameState(GameState.WON)
-        } else if (numberOfRetries === MAX_NUMBER_OF_RETRIES && !availableNumbers.length && selectedNumbers.reduce((a, b) => a + b, 0) !== numberOfStars) {
+        } else if (numberOfUsedRetries === MAX_NUMBER_OF_RETRIES && !availableNumbers.length && selectedNumbers.reduce((a, b) => a + b, 0) !== numberOfStars) {
             setGameState(GameState.LOST)
         }
     }
 
-    const areRetriesEnabled = () => numberOfRetries < MAX_NUMBER_OF_RETRIES
+    const areRetriesEnabled = () => numberOfUsedRetries < MAX_NUMBER_OF_RETRIES
 
     const areSelectedNumbersCorrect = () => {
         const sumOfSelectedNumbers = selectedNumbers.reduce((a, b) => a + b, 0)
@@ -110,37 +94,17 @@ const Game: React.FC = () => {
     return (
         <div className="Game">
             <div className="first-row">
-                <StarsDisplay roundNumber={roundNumber} numberOfStars={numberOfStars}/>
-                {gameState === GameState.STOPPED ?
-                    <StartGameButton onClick={restartGame}/> :
-                    <>
-                        <ButtonArea>
-                            <CircularButton icon={faCheck} isBlocked={!areSelectedNumbersCorrect()}
-                                            onClick={approveSelectedNumbers}/>
-                        </ButtonArea>
-                        <ButtonArea>
-                            <CircularButton icon={faReply} isBlocked={!areRetriesEnabled()} onClick={retryDraw}>
-                                <CornerCircularLabel value={MAX_NUMBER_OF_RETRIES - numberOfRetries}
-                                                     corner={Corner.TOP_RIGHT}/>
-                            </CircularButton>
-                        </ButtonArea>
-                    </>
-                }
-                < SelectedNumbersDisplay
-                    selectedNumbers={selectedNumbers}
-                    onNumberClick={unselectNumber}
-                />
+                <FirstGameRow roundNumber={roundNumber} numberOfStars={numberOfStars} restartGame={restartGame}
+                              approveSelectedNumbers={approveSelectedNumbers} retryDraw={retryDraw} unselectNumber={unselectNumber}
+                              selectedNumbers={selectedNumbers} gameState={gameState}
+                              areSelectedNumbersCorrect={areSelectedNumbersCorrect()} areRetriesEnabled={areRetriesEnabled()}
+                              availableNumberOfRetries={MAX_NUMBER_OF_RETRIES - numberOfUsedRetries}/>
             </div>
             <div className="second-row">
-                <NumbersDisplay availableNumbers={availableNumbers} onNumberClick={selectNumber} numbersCount={MAX_NUMBER_OF_STARS}/>
+                <SecondGameRow numbersCount={MAX_NUMBER_OF_STARS} availableNumbers={availableNumbers} selectNumber={selectNumber}/>
             </div>
             <div className="third-row">
-                <div>
-                    {gameState !== GameState.STOPPED ? gameState === GameState.IN_PROGRESS ?
-                        <Timer timer={timer}/> :
-                        gameState === GameState.WON ? <Trophy onClick={restartGame}/> :
-                            <Bomb onClick={restartGame}/> : ''}
-                </div>
+                <ThirdGameRow gameState={gameState} timerCount={timer} restartGame={restartGame}/>
             </div>
         </div>
     );

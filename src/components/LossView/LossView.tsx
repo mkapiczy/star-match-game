@@ -1,17 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import './Bomb.css';
+import React from 'react';
+import './LossView.css';
 import bomb from '../../assets/bomb.gif'
 
 interface Props {
     onClick: any
 }
 
-const Bomb: React.FC<Props> = (props: Props) => {
+const LossView: React.FC<Props> = (props: Props) => {
 
     return (
         <div className='bomb-wrapper'>
-            <img className={"bomb-image"} src={bomb}>
-            </img>
+            <img className={"bomb-image"} src={bomb} alt="Bomb gif"/>
             <div className="title-wrapper">
                 <div className="game-over-title">Game Over!</div>
                 <button className="bomb-play-again-button" onClick={props.onClick}>Play Again</button>
@@ -20,4 +19,4 @@ const Bomb: React.FC<Props> = (props: Props) => {
     );
 }
 
-export default Bomb;
+export default LossView;

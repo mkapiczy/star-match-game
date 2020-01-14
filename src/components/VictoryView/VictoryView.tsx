@@ -1,10 +1,10 @@
 import React from 'react';
-import './Trophy.css';
+import './VictoryView.css';
 
 interface Props {
     onClick: any
 }
-const Trophy: React.FC<Props> = (props: Props) => {
+const VictoryView: React.FC<Props> = (props: Props) => {
     return (
         <div className='wrapper'>
             <div className="title-wrapper">
@@ -27,4 +27,4 @@ const Trophy: React.FC<Props> = (props: Props) => {
     );
 }
 
-export default Trophy;
+export default VictoryView;
