@@ -7,7 +7,7 @@ const Header: React.FC = () => {
     return (
         <header className="App-header">
             <a href="/">
-                <img src={logo} className="App-logo" alt="logo"/>
+                <img title="logo" src={logo} className="App-logo" alt="logo"/>
             </a>
             <p className="app-title">
                 Match Stars Game
