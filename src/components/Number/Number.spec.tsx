@@ -12,7 +12,7 @@ describe("Number component tests", () => {
         const numberButon = getByText("2")
         expect(numberButon).toBeInTheDocument()
     })
-    it("should call onNumberClick method when number button available", ()=> {
+    it("should call onNumberClick method when number button available", () => {
         const onNumberClick = jest.fn()
         const {getByText} = render(
             <Number numberValue={2} isAvailable={true} onNumberClick={onNumberClick}/>,
@@ -21,7 +21,7 @@ describe("Number component tests", () => {
         fireEvent.click(numberButon)
         expect(onNumberClick).toBeCalledTimes(1)
     })
-    it("should not call onNumberClick method when number button is not available", ()=> {
+    it("should not call onNumberClick method when number button is not available", () => {
         const onNumberClick = jest.fn()
         const {getByText} = render(
             <Number numberValue={2} isAvailable={false} onNumberClick={onNumberClick}/>,
@@ -30,6 +30,9 @@ describe("Number component tests", () => {
         fireEvent.click(numberButon)
         expect(onNumberClick).not.toBeCalled()
     })
+})
+
+describe("Number snapshot tests", () => {
     it("should match snapshot for button available true", () => {
         const component = renderer.create(
             <Number numberValue={2} isAvailable={true} onNumberClick={() => ''}/>,

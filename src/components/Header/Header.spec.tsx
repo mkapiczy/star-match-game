@@ -14,6 +14,9 @@ describe("Header component tests", () => {
         expect(title).toBeInTheDocument()
         expect(logo.getAttribute("src")).toMatch("logo.svg")
     })
+})
+
+describe("Header snapshot tests",()=>{
     it("should match snapshot", () => {
         const component = renderer.create(
             <Header/>
