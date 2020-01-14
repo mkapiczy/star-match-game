@@ -10,8 +10,9 @@
 }
 
 .bomb-image {
+    top: 15vmin;
     position: absolute;
-    width: 50vmin;
+    width: 40vmin;
     height: auto;
     z-index: 1;
 }
