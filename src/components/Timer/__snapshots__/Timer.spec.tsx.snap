@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer component snapshot tests should match snapshot 1`] = `
+<div
+  className="timer"
+  style={
+    Object {
+      "fontWeight": "bold",
+    }
+  }
+>
+  Time left: 
+  5
+</div>
+`;
