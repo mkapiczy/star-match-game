@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CornerCircularLabel component snapshot tests should match snapshot 1`] = `
+<div
+  className="corner-circular-label top-right"
+  onClick={[Function]}
+>
+  2
+</div>
+`;
