@@ -11,12 +11,13 @@ import {randomSum} from "../../services/math-utils";
 import {GameState} from "../../services/CommonTypes";
 
 const Game: React.FC = () => {
-    const MAX_NUMBER_OF_STARS = 9;
+    const MAX_NUMBER_OF_STARS = 12;
+    const MAX_NUMBER = 9
     const MAX_NUMBER_OF_RETRIES = 5;
     const GAME_TIME = 10
     const TIMER_GAIN = 1
     const [roundNumber, setRoundNumber] = useState(1);
-    const [availableNumbers, setAvailableNumbers] = useState(Array.from(Array(9), (_, i) => i + 1))
+    const [availableNumbers, setAvailableNumbers] = useState(Array.from(Array(MAX_NUMBER), (_, i) => i + 1))
     const [numberOfStars, setNumberOfStars] = useState<number>(randomSum(availableNumbers, MAX_NUMBER_OF_STARS))
     const [selectedNumbers, setSelectedNumbers] = useState<Array<number>>([])
     const [numberOfUsedRetries, setNumberOfRetries] = useState<number>(0);
@@ -85,9 +86,10 @@ const Game: React.FC = () => {
     }
 
     const restartGame = () => {
+        const newAvailableNumbers = Array.from(Array(MAX_NUMBER), (_, i) => i + 1)
         setRoundNumber(1)
-        setAvailableNumbers(Array.from(Array(9), (_, i) => i + 1))
-        setNumberOfStars(randomSum(availableNumbers, MAX_NUMBER_OF_STARS))
+        setAvailableNumbers(newAvailableNumbers)
+        setNumberOfStars(randomSum(newAvailableNumbers, MAX_NUMBER_OF_STARS))
         setSelectedNumbers([])
         setNumberOfRetries(0)
         setGameState(GameState.IN_PROGRESS)
@@ -98,13 +100,16 @@ const Game: React.FC = () => {
         <div className="Game">
             <div className="first-row">
                 <FirstGameRow roundNumber={roundNumber} numberOfStars={numberOfStars} restartGame={restartGame}
-                              approveSelectedNumbers={approveSelectedNumbers} retryDraw={retryDraw} unselectNumber={unselectNumber}
+                              approveSelectedNumbers={approveSelectedNumbers} retryDraw={retryDraw}
+                              unselectNumber={unselectNumber}
                               selectedNumbers={selectedNumbers} gameState={gameState}
-                              areSelectedNumbersCorrect={areSelectedNumbersCorrect()} areRetriesEnabled={areRetriesEnabled()}
+                              areSelectedNumbersCorrect={areSelectedNumbersCorrect()}
+                              areRetriesEnabled={areRetriesEnabled()}
                               availableNumberOfRetries={MAX_NUMBER_OF_RETRIES - numberOfUsedRetries}/>
             </div>
             <div className="second-row">
-                <SecondGameRow numbersCount={MAX_NUMBER_OF_STARS} availableNumbers={availableNumbers} selectNumber={selectNumber}/>
+                <SecondGameRow numbersCount={MAX_NUMBER} availableNumbers={availableNumbers}
+                               selectNumber={selectNumber}/>
             </div>
             <div className="third-row">
                 <ThirdGameRow gameState={gameState} timerCount={timer} restartGame={restartGame}/>
