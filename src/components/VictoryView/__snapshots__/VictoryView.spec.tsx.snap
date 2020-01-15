@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VictoryView component snapshot tests should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="title-wrapper"
+  >
+    <div
+      className="you-won-title"
+    >
+      You Won!
+    </div>
+    <button
+      className="trophy-play-again-button"
+      onClick={[Function]}
+    >
+      Play Again
+    </button>
+  </div>
+  <div
+    className="glow"
+  />
+  <div
+    className="mask"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="trophy-star"
+      >
+        ✦
+      </div>
+      <div
+        className="main"
+      />
+      <div
+        className="stem1"
+      />
+      <div
+        className="stemCrease"
+      />
+      <div
+        className="stem2"
+      />
+      <div
+        className="base"
+      />
+      <div
+        className="arms"
+      />
+    </div>
+  </div>
+</div>
+`;
