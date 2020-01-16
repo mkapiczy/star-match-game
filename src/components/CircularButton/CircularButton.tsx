@@ -2,6 +2,8 @@ import React from 'react';
 import './CircularButton.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {IconDefinition} from '@fortawesome/free-solid-svg-icons'
+import classNames from "classnames"
+
 
 interface Props {
     icon: IconDefinition,
@@ -12,7 +14,8 @@ interface Props {
 
 const CircularButton: React.FC<Props> = (props: Props) => {
     return (
-        <button className={"button" + (props.isBlocked ? ' disabled' : '')} disabled={props.isBlocked} onClick={props.onClick}>
+        <button className={classNames('button', {'disabled': props.isBlocked})} disabled={props.isBlocked}
+                onClick={props.onClick}>
             <FontAwesomeIcon icon={props.icon}/>
             {props.children}
         </button>

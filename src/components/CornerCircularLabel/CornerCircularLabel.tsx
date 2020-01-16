@@ -1,6 +1,7 @@
 import React from 'react';
 import './CornerCircularLabel.scss';
 import {Corner} from '../../services/CommonTypes'
+import classNames from "classnames";
 
 interface Props {
     value: string | number,
@@ -23,9 +24,9 @@ const CornerCircularLabel: React.FC<Props> = (props: Props) => {
         }
     }
     return (
-            <div className={"corner-circular-label " + (resolveCornerClass())} onClick={(e) => e.stopPropagation()}>
-                {props.value}
-            </div>
+        <div className={classNames('corner-circular-label', resolveCornerClass())} onClick={(e) => e.stopPropagation()}>
+            {props.value}
+        </div>
     )
 }
 
