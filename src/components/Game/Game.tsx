@@ -87,7 +87,7 @@ const Game: React.FC = () => {
     }
 
     const restartGame = () => {
-        const newAvailableNumbers = Array.from(Array(MAX_NUMBER), (_, i) => i + 1)
+        const newAvailableNumbers = Array.from(_.range(0, MAX_NUMBER), (_, i) => i + 1)
         setRoundNumber(1)
         setAvailableNumbers(newAvailableNumbers)
         setNumberOfStars(randomSum(newAvailableNumbers, MAX_NUMBER_OF_STARS))

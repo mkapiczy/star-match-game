@@ -1,6 +1,7 @@
 import React from 'react';
 import './NumbersDisplay.scss';
 import Number from '../Number/Number';
+import _ from 'lodash'
 
 interface Props {
     numbersCount: number,
@@ -11,7 +12,7 @@ interface Props {
 const NumbersDisplay: React.FC<Props> = (props: Props) => {
     return (
         <div className="NumbersDisplay">
-            {[...Array(props.numbersCount)].map((e, i) => {
+            {[..._.range(0, props.numbersCount)].map((e, i) => {
                 const currentNumber = i + 1
                 return <Number key={currentNumber} numberValue={currentNumber} onNumberClick={props.onNumberClick}
                                isAvailable={props.availableNumbers.includes(currentNumber)}/>
