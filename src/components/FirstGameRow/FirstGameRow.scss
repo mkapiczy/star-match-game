@@ -4,11 +4,11 @@
   align-content: center;
   justify-content: center;
 
-  &.start-game-button {
+  .start-game-button {
     border-radius: 50%;
     font-size: 2vmin;
     font-weight: bold;
-    padding: 1em;
+    padding: 1.5vmin;
   }
 }
 

@@ -10,27 +10,27 @@
   text-align: center;
   text-decoration: none;
   background-color: #c300c3;
-  font-size: 1.25vh;
+  font-size: 1.75vmin;
   font-weight: bold;
   color: white;
 
   &.top-right {
-    right: -1em;
-    top: -1em;
+    right: -1.5vmin;
+    top: -1.5vmin;
   }
 
   &.top-left {
-    left: -1em;
-    top: -1em;
+    left: -1.5vmin;
+    top: -1.5vmin;
   }
 
   &.bottom-left {
-    left: -1em;
-    bottom: -1em
+    left: -1.5vmin;
+    bottom: -1.5vmin
   }
 
   &.bottom-right {
-    right: -1em;
-    bottom: -1em;
+    right: -1.5vmin;
+    bottom: -1.5vmin;
   }
 }
