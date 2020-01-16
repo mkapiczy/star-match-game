@@ -13,6 +13,7 @@
     "@types/node": "^12.12.24",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "@types/classnames": "^2.2.9",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
@@ -44,7 +45,6 @@
   },
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
-    "@types/classnames": "^2.2.9",
     "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/react-test-renderer": "^16.9.1",
