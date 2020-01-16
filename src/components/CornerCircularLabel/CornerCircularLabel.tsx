@@ -1,5 +1,5 @@
 import React from 'react';
-import './CornerCircularLabel.css';
+import './CornerCircularLabel.scss';
 import {Corner} from '../../services/CommonTypes'
 
 interface Props {

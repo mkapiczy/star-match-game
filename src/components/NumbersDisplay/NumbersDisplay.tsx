@@ -1,5 +1,5 @@
 import React from 'react';
-import './NumbersDisplay.css';
+import './NumbersDisplay.scss';
 import Number from '../Number/Number';
 
 interface Props {

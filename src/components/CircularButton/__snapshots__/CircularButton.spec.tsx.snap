@@ -3,6 +3,7 @@
 exports[`CircularButton component snapshot tests should match snapshot for faCheck icon isBlocked false 1`] = `
 <button
   className="button"
+  disabled={false}
   onClick={[Function]}
 >
   <svg
@@ -28,6 +29,7 @@ exports[`CircularButton component snapshot tests should match snapshot for faChe
 exports[`CircularButton component snapshot tests should match snapshot for faCheck icon isBlocked true 1`] = `
 <button
   className="button disabled"
+  disabled={true}
   onClick={[Function]}
 >
   <svg

@@ -1,7 +1,7 @@
 import React from 'react';
 // @ts-ignore
 import logo from '../../assets/logo.svg';
-import './Header.css';
+import './Header.scss';
 
 const Header: React.FC = () => {
     return (

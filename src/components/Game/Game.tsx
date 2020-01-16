@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import _ from 'lodash'
 
-import './Game.css';
+import './Game.scss';
 
 import FirstGameRow from "../FirstGameRow/FirstGameRow";
 import SecondGameRow from "../SecondGameRow/SecondGameRow";
@@ -11,7 +11,7 @@ import {randomSum} from "../../services/math-utils";
 import {GameState} from "../../services/CommonTypes";
 
 const Game: React.FC = () => {
-    const MAX_NUMBER_OF_STARS = 12;
+    const MAX_NUMBER_OF_STARS = 9;
     const MAX_NUMBER = 9
     const MAX_NUMBER_OF_RETRIES = 5;
     const GAME_TIME = 10
@@ -75,8 +75,9 @@ const Game: React.FC = () => {
     }
 
     const selectNumber = (selectedNumber: number) => {
-        setSelectedNumbers(_.uniq([...selectedNumbers, selectedNumber]))
-        setAvailableNumbers(_.filter(availableNumbers, (n) => ![...selectedNumbers, selectedNumber].includes(n)));
+        const newSelectedNumbers = [...selectedNumbers, selectedNumber]
+        setSelectedNumbers(_.uniq([...newSelectedNumbers]))
+        setAvailableNumbers(_.filter(availableNumbers, (n) => ![...newSelectedNumbers, selectedNumber].includes(n)));
     }
 
     const unselectNumber = (selectedNumber: number) => {

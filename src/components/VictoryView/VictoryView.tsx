@@ -1,5 +1,5 @@
 import React from 'react';
-import './VictoryView.css';
+import './VictoryView.scss';
 
 interface Props {
     onClick: any

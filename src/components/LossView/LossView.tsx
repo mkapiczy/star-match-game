@@ -1,5 +1,5 @@
 import React from 'react';
-import './LossView.css';
+import './LossView.scss';
 import bomb from '../../assets/bomb.gif'
 
 interface Props {

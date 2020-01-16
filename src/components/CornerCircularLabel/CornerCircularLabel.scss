@@ -1,0 +1,36 @@
+.corner-circular-label {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 3.5vmin;
+  height: 3.5vmin;
+  line-height: 3.5vmin;
+  text-align: center;
+  text-decoration: none;
+  background-color: #c300c3;
+  font-size: 1.25vh;
+  font-weight: bold;
+  color: white;
+
+  &.top-right {
+    right: -1em;
+    top: -1em;
+  }
+
+  &.top-left {
+    left: -1em;
+    top: -1em;
+  }
+
+  &.bottom-left {
+    left: -1em;
+    bottom: -1em
+  }
+
+  &.bottom-right {
+    right: -1em;
+    bottom: -1em;
+  }
+}

@@ -1,0 +1,21 @@
+.number {
+  margin-right: 0.25em;
+  margin-left: 0.25em;
+  background-color: #aeaeae;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  width: 5vmin;
+  height: 5vmin;
+  font-size: 2.5vmin;
+
+  &.not-available {
+    background-color: #3F51B5;
+  }
+
+  &:not(.not-available):hover {
+    background-color: #d8d8d8;
+  }
+}

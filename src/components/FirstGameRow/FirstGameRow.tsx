@@ -1,5 +1,5 @@
 import React from 'react';
-import './FirstGameRow.css';
+import './FirstGameRow.scss';
 
 import StarsDisplay from '../StarsDisplay/StarsDisplay';
 import SelectedNumbersDisplay from '../SelectedNumbersDisplay/SelectedNumbersDisplay';

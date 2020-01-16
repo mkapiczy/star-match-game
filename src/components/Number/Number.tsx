@@ -1,5 +1,5 @@
 import React from 'react';
-import './Number.css';
+import './Number.scss';
 
 interface Props {
     numberValue: number,
