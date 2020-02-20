@@ -1,0 +1,14 @@
+.SelectedNumbersDisplay {
+    display: flex;
+    flex-direction: row;
+    flex: 3 0 auto;
+    flex-wrap: wrap;
+    width: 33.333%;
+    height: 80%;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 2.5vmin;
+    border-style: groove;
+    margin: 2vmin;
+}

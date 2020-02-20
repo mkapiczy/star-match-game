@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumbersDisplay component snapshot tests should match snapshot for all numbers available 1`] = `
+<div
+  className="NumbersDisplay"
+>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    9
+  </button>
+</div>
+`;
+
+exports[`NumbersDisplay component snapshot tests should match snapshot for no numbers available 1`] = `
+<div
+  className="NumbersDisplay"
+>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    9
+  </button>
+</div>
+`;
+
+exports[`NumbersDisplay component snapshot tests should match snapshot for some numbers available 1`] = `
+<div
+  className="NumbersDisplay"
+>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="number not-available"
+    disabled={true}
+    onClick={[Function]}
+  >
+    9
+  </button>
+</div>
+`;

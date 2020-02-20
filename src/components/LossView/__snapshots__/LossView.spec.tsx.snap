@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LossView component snapshot tests should match snapshot 1`] = `
+<div
+  className="bomb-wrapper"
+>
+  <img
+    alt="Bomb gif"
+    className="bomb-image"
+    src="bomb.gif"
+  />
+  <div
+    className="title-wrapper"
+  >
+    <div
+      className="game-over-title"
+    >
+      Game Over!
+    </div>
+    <button
+      className="bomb-play-again-button"
+      onClick={[Function]}
+    >
+      Play Again
+    </button>
+  </div>
+</div>
+`;

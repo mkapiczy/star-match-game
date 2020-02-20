@@ -1,0 +1,215 @@
+
+.wrapper {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .title-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    z-index: 10;
+    justify-content: center;
+    align-content: center;
+
+    .you-won-title {
+      color: white;
+      font-weight: bold;
+      font-size: 5vmin;
+    }
+
+    .trophy-play-again-button {
+      width: 10vmin;
+      margin: auto;
+      font-size: 2vmin;
+    }
+  }
+
+  .container {
+    position: absolute;
+    top: 15vmax;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 1s linear alternate infinite;
+    transform: rotate(-10deg);
+
+
+  }
+
+
+  .glow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-radius: 20vmin;
+    box-shadow: 0 0 40vmin 20vmin #fffbc0;
+    animation: shadow 6s linear infinite;
+  }
+
+
+  .mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: gainsboro;
+    animation-fill-mode: forwards;
+    z-index: 100;
+    animation: leftToRight 6s linear;
+  }
+
+
+  .main {
+    height: 25vmin;
+    width: 20vmin;
+    background: gold;
+    border-bottom-left-radius: 10vmin;
+    border-bottom-right-radius: 10vmin;
+  }
+
+  .stem2 {
+    position: fixed;
+    top: 19vmin;
+    border-bottom: 10vmin solid gold;
+    border-left: 5vmin solid transparent;
+    border-right: 5vmin solid transparent;
+    height: 0;
+    width: 4vmin;
+    border-bottom-left-radius: 20vmin;
+    border-bottom-right-radius: 20vmin;
+    transform: rotate(180deg);
+  }
+
+  .stem1 {
+    position: absolute;
+    top: 28vmin;
+    border-bottom: 10vmin solid gold;
+    border-left: 5vmin solid transparent;
+    border-right: 5vmin solid transparent;
+    height: 0;
+    width: 4vmin;
+    border-top-left-radius: 20vmin;
+    border-top-right-radius: 20vmin;
+  }
+
+  .base {
+    position: fixed;
+    width: 18vmin;
+    border-top-left-radius: 2vmin;
+    border-top-right-radius: 2vmin;
+    background: black;
+    height: 2vmin;
+    top: 38vmin;
+  }
+
+  .arms {
+    width: 35vmin;
+    height: 20vmin;
+    position: absolute;
+    background: transparent;
+    z-index: -1;
+    border: #ddba00 2vmin solid;
+    border-radius: 0.5vmin 0.5vmin 10vmin 10vmin;
+  }
+
+  .stemCrease {
+    position: absolute;
+    width: 6vmin;
+    height: 1.5vmin;
+    border-radius: 1vmin;
+    background: #ddba00;
+    top: 28vmin;
+    z-index: 1;
+  }
+
+  .trophy-star {
+    position: absolute;
+    font-size: 10vmin;
+    color: white;
+    top: 0;
+    left: 10vmin;
+    transform-origin: center;
+    animation: shimmer .4s alternate infinite linear;
+  }
+}
+
+
+@keyframes shimmer {
+  to {
+    transform: rotate(20deg)
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(10deg)
+  }
+}
+
+@keyframes leftToRight {
+  0% {
+    clip-path: circle(150px at 0% 100%);
+  }
+  20% {
+    clip-path: circle(150px at 50% 15%);
+  }
+  30% {
+    clip-path: circle(150px at 100% 50%);
+  }
+  40% {
+    clip-path: circle(150px at 70% 100%);
+  }
+  70% {
+    clip-path: circle(150px at -100% -100%);
+  }
+  80% {
+    clip-path: circle(150px at -100% 200%);
+  }
+  85% {
+    clip-path: circle(150px at 50% 200%);
+  }
+  90% {
+    clip-path: circle(100% at 50% 80%);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    left: 0%;
+    top: 100%;
+  }
+  20% {
+    left: 50%;
+    top: 15%;
+  }
+  30% {
+    left: 100%;
+    top: 50%;
+  }
+  40% {
+    left: 70%;
+    top: 100%;
+  }
+  70% {
+    left: -100%;
+    top: -100%;
+  }
+  80% {
+    left: -100%;
+    top: 200%
+  }
+  85% {
+    left: 500%;
+    top: 200%;
+  }
+  95% {
+    left: 50%;
+    top: 80%;
+  }
+
+}

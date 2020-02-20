@@ -1,9 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import {mount} from "enzyme";
+import Header from "./components/Header/Header";
+import Game from "./components/Game/Game";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("App tests", () => {
+  it("should render app correctly", () => {
+    const wrapper = mount(<App/>)
+    expect(wrapper.contains(<Header/>)).toEqual(true)
+    expect(wrapper.contains(<Game/>)).toEqual(true)
+  })
+})

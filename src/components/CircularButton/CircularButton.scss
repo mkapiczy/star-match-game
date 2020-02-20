@@ -1,0 +1,29 @@
+.button {
+  position: relative;
+  display: inline-block;
+  background-color: #3F51B5;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  width: 6vmin;
+  height: 6vmin;
+  font-size: 2vmin;
+  margin: auto;
+
+  @media only screen and (max-width: 800px) {
+    margin: auto 0.25vmin auto 0.25vmin;
+
+  }
+
+  &.disabled {
+    background-color: gray;
+  }
+
+  &:not(.disabled):hover {
+    background-color: #4558ea;
+  }
+
+}
+

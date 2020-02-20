@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectedNumbersDisplay component snapshot tests should match snapshot for all numbers selected 1`] = `
+<div
+  className="SelectedNumbersDisplay"
+>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    9
+  </button>
+</div>
+`;
+
+exports[`SelectedNumbersDisplay component snapshot tests should match snapshot for no numbers selected 1`] = `
+<div
+  className="SelectedNumbersDisplay"
+/>
+`;
+
+exports[`SelectedNumbersDisplay component snapshot tests should match snapshot for some numbers selected 1`] = `
+<div
+  className="SelectedNumbersDisplay"
+>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="number"
+    disabled={false}
+    onClick={[Function]}
+  >
+    8
+  </button>
+</div>
+`;

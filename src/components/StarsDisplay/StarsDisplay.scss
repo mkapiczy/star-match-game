@@ -1,0 +1,31 @@
+.StarsDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 3 0 auto;
+  height: 80%;
+  width: 33.333%;
+  background-color: white;
+  align-items: center;
+  border-radius: 2.5vmin;
+  border-style: groove;
+  margin: 2vmin;
+
+  .title {
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+    font-size: 3vmin;
+  }
+
+  .stars {
+    margin: 2vmin 2vmin 2vmin 2vmin;
+
+    .star {
+      width: 2vmin !important;
+      height: auto;
+    }
+  }
+
+
+}
+

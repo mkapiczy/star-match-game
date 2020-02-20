@@ -1,0 +1,21 @@
+.start-game-column {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+
+  .start-game-button {
+    border-radius: 50%;
+    font-size: 2vmin;
+    font-weight: bold;
+    padding: 1.5vmin;
+  }
+}
+
+
+.button-column {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}

@@ -1,0 +1,32 @@
+.App-header {
+  display: flex;
+  flex-direction: row;
+  background-color: #3F51B5;
+  flex: 0 0 auto;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+
+  .app-title {
+    font-size: 4vmin;
+  }
+
+  .App-logo {
+    height: 4vmin;
+    pointer-events: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: App-logo-spin infinite 20s linear;
+    }
+
+    @keyframes App-logo-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
